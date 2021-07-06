@@ -21,7 +21,7 @@ router.post("/new", (req, res) => {
   res.status(201).json(req.body);
 });
 
-router.delete("/userId", setUser, authUser, authRole(ROLE.SUPERVISOR), (req, res) => {
+router.delete("/:userId", setUser, authUser, authRole(ROLE.SUPERVISOR), (req, res) => {
   res.send("user deleted");
 });
 

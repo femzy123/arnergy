@@ -15,8 +15,8 @@ router.post("/new", authUser, authRole(ROLE.SUPERVISOR), (req, res) => {
   res.status(201).json(req.body);
 });
 
-router.delete("/productId", authUser, authRole(ROLE.SUPERVISOR), (req, res) => {
-  res.send("Product deleted");
+router.delete("/:messageId", authUser, authRole(ROLE.SUPERVISOR), (req, res) => {
+  res.send("Message deleted");
 });
 
 function setMessages(req, res, next) {

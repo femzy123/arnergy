@@ -20,8 +20,8 @@ router.post(
   }
 );
 
-router.delete("/productId", (req, res) => {
-  res.send("Product deleted");
+router.delete("/:categoryId", (req, res) => {
+  res.send("Category deleted");
 });
 
 function setCategory(req, res, next) {

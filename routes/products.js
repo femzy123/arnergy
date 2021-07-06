@@ -20,7 +20,7 @@ router.post(
   }
 );
 
-router.delete("/productId", (req, res) => {
+router.delete("/:productId", (req, res) => {
   res.send("Product deleted");
 });
 
