@@ -3,6 +3,8 @@ const app = express();
 const { ROLE, users } = require("./data");
 const productRouter = require("./routes/products");
 const messageRouter = require("./routes/messages");
+const categoryRouter = require("./routes/categories");
+const userRouter = require("./routes/users")
 const bodyParser = require("body-parser");
 
 app.use(express.json());
@@ -10,6 +12,8 @@ app.use(bodyParser.json());
 app.use(setUser);
 app.use("/products", productRouter);
 app.use("/messages", messageRouter);
+app.use("/categories", categoryRouter);
+app.use("/users", userRouter);
 
 app.use(express.json());
 

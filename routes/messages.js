@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { messages, ROLE } = require("../data");
-const { authUser, authRole } = require("../auth");
+const { authUser, authRole } = require("../permission/auth");
 
 router.get("/", (req, res) => {
   res.status(200).json(messages);
