@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { products, ROLE } = require("../data");
-const { authUser } = require("../permission/auth");
+const { authUser, authRole } = require("../auth");
 
 router.get("/", (req, res) => {
   res.status(200).json(products);
@@ -14,6 +14,7 @@ router.get("/:productId", setProduct, (req, res) => {
 router.post(
   "/new",
   authUser,
+  authRole(ROLE.SUPERVISOR, ROLE.EMPLOYEE),
   (req, res) => {
     res.status(201).json(req.body);
   }

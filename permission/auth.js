@@ -6,7 +6,18 @@ function authUser(req, res, next) {
   next();
 }
 
+function authRole(...roles) {
+  return (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      res.status(401);
+      return res.send("Not allowed");
+    }
+
+    next();
+  };
+}
 
 module.exports = {
-  authUser
+  authUser,
+  authRole
 }
