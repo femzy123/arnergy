@@ -18,7 +18,7 @@ app.use("/users", userRouter);
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Hello world");
+  res.send("Welcome to Anergy Assessment Solutions");
 });
 
 function setUser(req, res, next) {
