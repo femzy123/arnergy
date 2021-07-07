@@ -10,7 +10,7 @@ A simple Authentication and Authorization nodejs API
 
 ### Public API Access
 
-Follow the link (http://3.142.77.176:3000/)[http://3.142.77.176:3000/]
+Public endpoint - http://3.142.77.176:3000/
 
 
 ### Endpoints
